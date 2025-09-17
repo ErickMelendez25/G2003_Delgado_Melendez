@@ -1,0 +1,164 @@
+/* ====== CONTENEDOR GENERAL ====== */
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  padding: clamp(16px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box; /* evita que el padding sume al width */
+  overflow-x: hidden;     /* asegura que no aparezca scroll lateral */
+}
+
+/* ====== HEADER ====== */
+.dashboard-header {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(1rem, 3vw, 2.5rem);
+  flex-wrap: wrap;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.dashboard-header h1 {
+  color: #4f46e5;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* ====== CARD BIENVENIDA ====== */
+.welcome-card {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 16px;
+  padding: clamp(20px, 3vw, 32px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+.welcome-card h2 {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: #111827;
+  margin: 0;
+}
+
+.welcome-card p {
+  color: #4b5563;
+  margin-top: 8px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* ====== CARDS DE CONTENIDO ====== */
+.cards-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  box-sizing: border-box;
+}
+
+.card {
+  border-radius: 16px;
+  padding: clamp(20px, 2vw, 28px);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  flex: 1;
+}
+
+.card button {
+  margin-top: 12px;
+  background: white;
+  color: inherit;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.card button:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* ====== COLORES ====== */
+.card-purple {
+  background: linear-gradient(to bottom right, #8b5cf6, #4f46e5);
+}
+
+.card-orange {
+  background: linear-gradient(to bottom right, #f97316, #fb923c);
+}
+
+.card-green {
+  background: linear-gradient(to bottom right, #10b981, #059669);
+}
+
+/* ====== RESPONSIVE EXTRA ====== */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .logout-btn {
+    align-self: flex-end;
+  }
+
+  .welcome-card {
+    text-align: left;
+  }
+}
