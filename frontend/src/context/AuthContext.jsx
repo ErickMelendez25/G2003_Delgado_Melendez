@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { api } from '../services/api';
 
-const AuthCtx = createContext(null);
+export const AuthCtx = createContext(null);
+
 export const useAuth = () => useContext(AuthCtx);
 
 export default function AuthProvider({ children }) {
@@ -9,7 +10,9 @@ export default function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   // 🔑 tiempo de inactividad permitido (1 minuto = 60000 ms)
-  const inactivityTime = 60000;
+// 🔑 tiempo de inactividad permitido (1 minuto = 60000 ms)
+  const inactivityTime = 24 * 60 * 60 * 1000; // 24 horas
+
   const timerRef = useRef(null);
 
   // 🚀 obtener usuario al cargar

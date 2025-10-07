@@ -9,23 +9,16 @@ export default function Dashboard() {
   const [file, setFile] = useState(null);
   const [analysis, setAnalysis] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [downloadFormat, setDownloadFormat] = useState("txt");
 
   const handleLogout = async () => {
     await logout();
     navigate('/login');
   };
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-
   const handleUpload = async (e) => {
     e.preventDefault();
-
-    if (!file) {
-      alert("Por favor selecciona un archivo primero.");
-      return;
-    }
+    if (!file) return alert("Selecciona un archivo.");
 
     const formData = new FormData();
     formData.append("file", file);
@@ -38,59 +31,76 @@ export default function Dashboard() {
       });
 
       const data = await res.json();
-      console.log("Respuesta del servidor:", data);
-
-      // Guardamos el resultado en análisis
-      setAnalysis({
-        spelling: data.matches?.filter(m => m.rule.issueType === "misspelling").length || 0,
-        grammar: data.matches?.filter(m => m.rule.issueType === "grammar").length || 0,
-        suggestions: data.matches?.map(m => m.message) || []
-      });
+      console.log("Respuesta:", data);
+      setAnalysis(data);
     } catch (err) {
       console.error("Error al subir:", err);
-      alert("Error al analizar el archivo");
+      alert("Error al analizar el archivo.");
     } finally {
       setLoading(false);
     }
   };
 
+  const handleDownload = () => {
+    if (!analysis?.correctedText) return;
+    const blob = new Blob([analysis.correctedText], {
+      type:
+        downloadFormat === "txt"
+          ? "text/plain"
+          : downloadFormat === "docx"
+          ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          : "application/pdf",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `texto_corregido.${downloadFormat}`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h1>Dashboard</h1>
+        <h1>Dashboard — 📚 CampusUC — Análisis de Ensayos</h1>
+
         <button onClick={handleLogout} className="logout-btn">Salir</button>
       </header>
 
-      <div className="welcome-card">
-        <h2>👋 Hola, {user?.name || 'Usuario'}</h2>
-        <p>Aquí puedes subir tu ensayo y recibir un análisis automático.</p>
-      </div>
-
-      <div className="card card-purple">
-        <h3>📄 Subir Ensayo</h3>
-        <form onSubmit={handleUpload} className="upload-form">
-          <input
-            type="file"
-            accept=".pdf,.doc,.docx"
-            onChange={handleFileChange}
-          />
+      <div className="card">
+        <h3>📄 Subir ensayo</h3>
+        <form onSubmit={handleUpload}>
+          <input type="file" accept=".pdf,.doc,.docx,.txt" onChange={(e) => setFile(e.target.files[0])} />
           <button type="submit" disabled={loading}>
-            {loading ? "Analizando..." : "Subir y Analizar"}
+            {loading ? "Analizando..." : "Subir y analizar"}
           </button>
         </form>
       </div>
 
       {analysis && (
-        <div className="card card-green">
-          <h3>📊 Resultados del Análisis</h3>
-          <p><strong>Ortografía:</strong> {analysis.spelling}</p>
-          <p><strong>Gramática:</strong> {analysis.grammar}</p>
-          <p><strong>Sugerencias:</strong></p>
-          <ul>
-            {analysis.suggestions.map((s, i) => (
-              <li key={i}>{s}</li>
-            ))}
-          </ul>
+        <div className="analysis-container">
+          <div className="card results-card">
+            <h3>📊 Resultado del análisis</h3>
+            <textarea
+              value={analysis.correctedText}
+              readOnly
+              className="corrected-text"
+            />
+            <div className="download-section">
+              <label>Formato de descarga: </label>
+              <select
+                value={downloadFormat}
+                onChange={(e) => setDownloadFormat(e.target.value)}
+              >
+                <option value="txt">.txt</option>
+                <option value="docx">.docx</option>
+                <option value="pdf">.pdf</option>
+              </select>
+              <button onClick={handleDownload} className="download-btn">
+                ⬇️ Descargar archivo corregido
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

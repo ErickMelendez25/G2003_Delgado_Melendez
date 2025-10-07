@@ -1,37 +1,30 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import '../styles/register.css'; // 👈 Importa el CSS
+// src/pages/Register.jsx
+import React, { useState, useContext } from "react";
+import { AuthCtx } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-export default function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Register = () => {
+  const { register } = useContext(AuthCtx);
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await axios.post('http://localhost:4000/api/auth/register', {
-        name,
-        email,
-        password
-      });
-      alert('Registro exitoso, ahora puedes iniciar sesión');
-      navigate('/login');
-    } catch (error) {
-      alert('Error en el registro: ' + (error.response?.data?.message || error.message));
-    }
+    register(name, email, password);
+    navigate("/dashboard");
   };
 
   return (
     <div className="register-container">
       <h2>Registro</h2>
-      <form onSubmit={handleSubmit} className="register-form">
+      <form className="register-form" onSubmit={handleSubmit}>
         <div>
           <label>Nombre</label>
           <input
             type="text"
+            placeholder="Nombre"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -42,6 +35,7 @@ export default function Register() {
           <label>Correo</label>
           <input
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -52,6 +46,7 @@ export default function Register() {
           <label>Contraseña</label>
           <input
             type="password"
+            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -62,4 +57,6 @@ export default function Register() {
       </form>
     </div>
   );
-}
+};
+
+export default Register;
