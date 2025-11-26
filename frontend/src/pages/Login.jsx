@@ -18,12 +18,19 @@ export default function Login() {
 
   const onSubmit = async (values) => {
     try {
-      await login(values.email, values.password);
-      navigate('/dashboard');
+      const user = await login(values.email, values.password);
+
+      if (user.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
+
     } catch (err) {
       alert(err?.response?.data?.error || 'Error al iniciar sesión');
     }
   };
+
 
   return (
     <div className="login-container">
@@ -32,7 +39,8 @@ export default function Login() {
         <input placeholder="Email" {...register('email')} />
         {errors.email && <small className="error">{errors.email.message}</small>}
 
-        <input type="password" placeholder="Contraseña" {...register('password')} />
+        <input type="password" placeholder="Contraseña" {...register('password')} autoComplete="current-password" />
+
         {errors.password && <small className="error">{errors.password.message}</small>}
 
         <button disabled={isSubmitting}>Entrar</button>

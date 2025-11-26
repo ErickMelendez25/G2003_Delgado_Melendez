@@ -1,27 +1,37 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
-import { api } from '../services/api';
+import { api, setAuthToken } from '../services/api';
 
 export const AuthCtx = createContext(null);
-
 export const useAuth = () => useContext(AuthCtx);
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // 🔑 tiempo de inactividad permitido (1 minuto = 60000 ms)
-// 🔑 tiempo de inactividad permitido (1 minuto = 60000 ms)
-  const inactivityTime = 24 * 60 * 60 * 1000; // 24 horas
-
+  const inactivityTime = 24 * 60 * 60 * 1000;
   const timerRef = useRef(null);
 
-  // 🚀 obtener usuario al cargar
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await api.get('/auth/me');
-        setUser(data);
-      } catch {
+        const token = localStorage.getItem('token');
+        const savedUser = localStorage.getItem('user');
+
+        if (token && savedUser) {
+          setAuthToken(token);
+
+          const { data } = await api.get('/auth/profile');
+
+
+          const userData = {
+            ...data.user,
+            token,
+          };
+
+          setUser(userData);
+          localStorage.setItem('user', JSON.stringify(userData));
+        }
+      } catch (err) {
+        console.warn("Autologin falló:", err);
         setUser(null);
       } finally {
         setLoading(false);
@@ -29,60 +39,81 @@ export default function AuthProvider({ children }) {
     })();
   }, []);
 
-  // 👇 función de logout
+  // LOGIN
+  const login = async (email, password) => {
+    const { data } = await api.post('/auth/login', { email, password });
+
+    const userData = {
+      ...data.user,
+      token: data.token,
+    };
+
+    setAuthToken(data.token);
+    setUser(userData);
+
+    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("token", data.token);
+
+    return userData;
+  };
+
+  // REGISTER
+  const register = async (name, email, password) => {
+    const { data } = await api.post('/auth/register', { name, email, password });
+
+    const userData = {
+      ...data.user,
+      token: data.token,
+    };
+
+    setAuthToken(data.token);
+    setUser(userData);
+
+    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("token", data.token);
+
+    return userData;
+  };
+
+  // LOGOUT
   const logout = async () => {
     try {
       await api.post('/auth/logout');
-    } catch {
-      // incluso si falla en backend, limpiamos sesión en frontend
+    } catch (err) {
+      console.warn("Logout backend falló:", err);
+    } finally {
+      setUser(null);
+      setAuthToken(null);
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+
     }
-    setUser(null);
   };
 
-  const login = async (email, password) => {
-    const { data } = await api.post('/auth/login', { email, password });
-    setUser(data);
-    return data;
-  };
-
-  const register = async (name, email, password) => {
-    const { data } = await api.post('/auth/register', { name, email, password });
-    setUser(data);
-    return data;
-  };
-
-  // 🔥 manejar inactividad
+  // AUTO LOGOUT POR INACTIVIDAD
   const resetTimer = () => {
     clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       logout();
-      alert('⚠️ Sesión cerrada por inactividad');
+      alert("⚠️ Sesión cerrada por inactividad");
     }, inactivityTime);
   };
 
   useEffect(() => {
     if (user) {
-      const events = ['mousemove', 'keydown', 'click', 'scroll'];
-
-      events.forEach(event =>
-        window.addEventListener(event, resetTimer)
-      );
-
-      resetTimer(); // inicia temporizador cuando hay sesión activa
-
+      const events = ["mousemove", "keydown", "click", "scroll"];
+      events.forEach((ev) => window.addEventListener(ev, resetTimer));
+      resetTimer();
       return () => {
-        events.forEach(event =>
-          window.removeEventListener(event, resetTimer)
-        );
+        events.forEach((ev) => window.removeEventListener(ev, resetTimer));
         clearTimeout(timerRef.current);
       };
     }
   }, [user]);
 
-    return (
+  return (
     <AuthCtx.Provider value={{ user, loading, login, register, logout }}>
-        {console.log("AuthProvider montado, user:", user)}
-        {children}
+      {children}
     </AuthCtx.Provider>
-    );
+  );
 }

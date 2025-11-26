@@ -1,24 +1,25 @@
-// src/pages/Register.jsx
-import React, { useState, useContext } from "react";
-import { AuthCtx } from "../context/AuthContext";
+import React, { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "../styles/register.css";  // 👈 IMPORTACIÓN
 
 const Register = () => {
-  const { register } = useContext(AuthCtx);
+  const { register } = useAuth();
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    register(name, email, password);
+    await register(name, email, password);
     navigate("/dashboard");
   };
 
   return (
     <div className="register-container">
       <h2>Registro</h2>
+
       <form className="register-form" onSubmit={handleSubmit}>
         <div>
           <label>Nombre</label>
@@ -54,6 +55,11 @@ const Register = () => {
         </div>
 
         <button type="submit">Registrarse</button>
+
+        <div className="login-link">
+          ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
+        </div>
+
       </form>
     </div>
   );

@@ -1,0 +1,70 @@
+/* ===== SEPARACIÓN SUPERIOR ELEGANTE ===== */
+.admin-table-container {
+  overflow-x: auto;
+  margin-top: 150px; /* 👈 Este es el margin-top */
+}
+
+/* Mantiene exactamente el mismo tamaño */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  table-layout: fixed; /* 👈 CLAVE: evita que crezca */
+}
+
+/* ===== CABECERA BONITA ===== */
+.admin-table thead {
+  background: #4308ce;
+  color: white;
+}
+
+.admin-table th {
+  padding: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  white-space: nowrap; /* 👈 NO CRECE */
+}
+
+/* ===== FILAS ===== */
+.admin-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.admin-table tbody tr:hover {
+  background: #eef2ff;
+  transition: 0.2s ease;
+}
+
+/* ===== CELDAS ===== */
+.admin-table td {
+  padding: 12px;
+  font-size: 0.88rem;
+  text-align: center;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap; /* 👈 NO CRECE */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 👈 MUY IMPORTANTE: evita que agrande columnas */
+}
+
+/* ===== Botón Ver ===== */
+.admin-table button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.admin-table button:hover {
+  background: #1d4ed8;
+  transform: scale(1.04);
+}
