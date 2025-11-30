@@ -16,9 +16,6 @@ backend/*.env
 # ===== PACKAGE FILES =====
 package.json
 package-lock.json
-frontend/package.json
-
-backend/package.json
 
 
 # ===== LOGS =====
