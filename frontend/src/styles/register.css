@@ -1,0 +1,133 @@
+/* styles/register.css */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4f46e5, #9333ea); /* Igual que login */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ======== TARJETA ======== */
+.register-container {
+  width: 90%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 12px;
+
+  background: #fff; /* Igual que login */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ======== TÍTULO ======== */
+.register-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #1e1e2f; /* Igual que login */
+}
+
+/* ======== FORM ======== */
+.register-form {
+  display: grid;
+  gap: 15px;
+  text-align: left;
+}
+
+.register-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #1e1e2f;
+}
+
+/* ======== INPUTS — TOTALMENTE EXTENDIDOS ======== */
+.register-form input {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  padding: 12px;
+  border-radius: 8px;
+
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  color: #1e1e2f;
+
+  background: #fff;
+  box-sizing: border-box;
+
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+}
+
+/* ======== BOTÓN ======== */
+.register-form button {
+  background: #4f46e5; /* Igual que login */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.register-form button:hover {
+  background: #4338ca; /* Igual que login */
+}
+
+/* ======== LINK AL LOGIN ======== */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #4f46e5;
+}
+
+.login-link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* ======== ANIMACIÓN ======== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ======== LINK AL LOGIN ======== */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #4f46e5;
+}
+
+.login-link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

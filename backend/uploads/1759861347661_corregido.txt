@@ -1,0 +1,205 @@
+Aquí tienes el texto corregido y una lista detallada de los errores encontrados, con sus respectivas correcciones.
+
+---
+
+### Texto Corregido
+
+**ERICK ANDERSON MELÉNDEZ VALENZUELA**
+
+**Datos personales y de contacto**
+*   **Teléfono:** +51 971 168 000
+*   **Correo electrónico:** 72848846@continental.edu.pe
+*   **Dirección:** Av. Huancavelica n.º 2970, Huancayo, Junín, Perú
+*   **Fecha de nacimiento:** 13 de enero de 2003
+*   **Estado civil:** Soltero
+*   **DNI:** 72848846
+*   **Remuneración bruta pretendida:** S/ 1025
+
+**Objetivo laboral**
+Busco una oportunidad en el sector tecnológico para aplicar mis conocimientos en desarrollo de software, aprender de profesionales experimentados y contribuir a proyectos innovadores. Mi objetivo es el crecimiento continuo y el desarrollo profesional en este campo.
+
+**Experiencia laboral**
+
+**Área NOC y Redes de Clientes**
+**Corp. Giga Mas**
+Febrero de 2024 – Mayo de 2024
+*   Diseño de redes FTTH.
+*   Simulación y diseño de soluciones de red.
+*   Instalación y configuración de equipos.
+*   Realización de pruebas de red.
+*   Monitoreo y diagnóstico de la infraestructura de red.
+*   Instalación y puesta en marcha de servicios en clientes.
+*   Resolución de incidencias y problemas técnicos.
+*   Atención a emergencias técnicas.
+
+**Estudios**
+
+**Ingeniería de Sistemas e Informática**
+Universidad Continental
+Estudios universitarios - En curso
+Enero de 2021 – Presente
+
+**Cursos y certificaciones**
+
+**Excel Profesional**
+Cámara de Comercio Exterior
+Curso - Graduado
+Febrero de 2024 – Enero de 2025
+
+**SQL Server Fundamentals**
+Lima Educa
+Curso - Graduado
+Marzo de 2024 – Abril de 2024
+
+**Desarrollo Web con Python**
+Pontificia Universidad Católica del Perú
+Curso - Graduado
+Marzo de 2024 – Abril de 2024
+
+**Estadística para Ciencia de Datos usando R**
+Universidad Continental
+Curso - Graduado
+Abril de 2024
+
+**Proyecto Hackathon (Aprendizaje Inclusivo)**
+Universidad Continental
+Curso - Graduado
+Febrero de 2024 – Marzo de 2024
+
+**Oratoria**
+Cipal
+Curso - Graduado
+Junio de 2020 – Julio de 2020
+
+**Conocimientos técnicos**
+*   C++
+*   Python
+*   JavaScript
+*   React
+*   Laravel
+*   Django
+*   Flutter
+*   Microsoft Excel
+*   Visual Studio
+*   PyCharm
+*   Herramientas de IA
+*   SQL Server
+
+**Idiomas**
+*   **Inglés:**
+    *   Escrito: Intermedio
+    *   Oral: Intermedio
+
+---
+
+### Lista Detallada de Errores y Correcciones
+
+A continuación, se presenta una lista detallada de los errores encontrados, categorizados y con su respectiva corrección. Para un CV, el "formato de citas" se interpreta como la consistencia en la presentación de fechas, títulos, nombres y estructura general.
+
+**1. Errores de Ortografía y Acentuación**
+
+*   **Original:** `MELENDEZ`
+    *   **Corrección:** `MELÉNDEZ`
+    *   **Tipo de error:** Acentuación
+*   **Original:** `Junin`
+    *   **Corrección:** `Junín`
+    *   **Tipo de error:** Acentuación
+*   **Original:** `Peru` (en la dirección y fechas)
+    *   **Corrección:** `Perú`
+    *   **Tipo de error:** Acentuación
+*   **Original:** `CAMARA DE COMERCIO EXTERIOR`
+    *   **Corrección:** `Cámara de Comercio Exterior`
+    *   **Tipo de error:** Acentuación (en "Cámara"), Capitalización (nombre propio).
+
+**2. Errores de Gramática y Sintaxis**
+
+*   **Original:** `ERICK ANDERSON MELENDEZ VALENZUELA`
+    *   **Corrección:** `ERICK ANDERSON MELÉNDEZ VALENZUELA` (o `Erick Anderson Meléndez Valenzuela` si se prefiere minúsculas para el nombre completo y mayúsculas para las secciones, aunque se mantiene el estilo original de mayúsculas para el nombre principal).
+    *   **Tipo de error:** Capitalización (en el contexto de un CV, se respeta la capitalización para el nombre, pero se corrige la acentuación).
+*   **Original:** `Soltero/a`
+    *   **Corrección:** `Soltero`
+    *   **Tipo de error:** Redundancia (el nombre "Erick" indica género masculino), Concisión.
+*   **Original:** `Área NOC y Red Cliente`
+    *   **Corrección:** `Área NOC y Redes de Clientes`
+    *   **Tipo de error:** Concordancia (plural de "Redes"), Claridad.
+*   **Original:** Títulos de tareas en mayúsculas (ej. `DISEÑO DE REDES FTTH`)
+    *   **Corrección:** Primera letra en mayúscula, el resto en minúscula, precedido por un verbo de acción (ej. `Diseño de redes FTTH.`).
+    *   **Tipo de error:** Capitalización, Estilo profesional (uso de verbos de acción).
+*   **Original:** `SIMULACIÓN Y DISEÑO`
+    *   **Corrección:** `Simulación y diseño de soluciones de red.`
+    *   **Tipo de error:** Claridad, Concisión (añadiendo contexto).
+*   **Original:** `MONITOREO Y DIAGNÓSTICO`
+    *   **Corrección:** `Monitoreo y diagnóstico de la infraestructura de red.`
+    *   **Tipo de error:** Claridad, Concisión (añadiendo contexto).
+*   **Original:** `INSTALACIÓN EN CLIENTES`
+    *   **Corrección:** `Instalación y puesta en marcha de servicios en clientes.`
+    *   **Tipo de error:** Claridad, Concisión.
+*   **Original:** `RESOLUCIÓN DE PROBLEMAS`
+    *   **Corrección:** `Resolución de incidencias y problemas técnicos.`
+    *   **Tipo de error:** Claridad, Precisión léxica.
+*   **Original:** `ATENCIÓN A EMERGENCIAS`
+    *   **Corrección:** `Atención a emergencias técnicas.`
+    *   **Tipo de error:** Claridad, Precisión léxica.
+*   **Original:** `Busco una oportunidad en tecnología... Estoy enfocado en el crecimiento continuo dentro del campo tecnológico.`
+    *   **Corrección:** `Busco una oportunidad en el sector tecnológico para aplicar mis conocimientos en desarrollo de software, aprender de profesionales experimentados y contribuir a proyectos innovadores. Mi objetivo es el crecimiento continuo y el desarrollo profesional en este campo.`
+    *   **Tipo de error:** Estilo, Cohesión (mejorando la conexión entre las dos frases y la elección de palabras).
+*   **Original:** `herramientas de IA`
+    *   **Corrección:** `Herramientas de IA`
+    *   **Tipo de error:** Capitalización (inicio de elemento en lista).
+*   **Original:** `Escrito Intermedio , Oral Intermedio` (en la sección de Inglés)
+    *   **Corrección:** `Escrito: Intermedio`, `Oral: Intermedio`
+    *   **Tipo de error:** Sintaxis, Puntuación, Formato.
+
+**3. Errores de Puntuación**
+
+*   **Original:** `13-01-2003 , Soltero/a, Peru.`
+    *   **Corrección:** `Fecha de nacimiento: 13 de enero de 2003. Estado civil: Soltero.`
+    *   **Tipo de error:** Puntuación (uso de comas incorrectas, falta de puntos para separar datos), Claridad.
+*   **Original:** `S/.1,025`
+    *   **Corrección:** `S/ 1025`
+    *   **Tipo de error:** Puntuación (símbolo de moneda incorrecto `S/.` por `S/`, uso de coma como separador de miles en un número de cuatro dígitos sin decimales es ambiguo o innecesario en este contexto).
+*   **Original:** `01-02-2024 - 01-05-2024` (y otras fechas)
+    *   **Corrección:** `Febrero de 2024 – Mayo de 2024`
+    *   **Tipo de error:** Puntuación (guion corto por guion largo/raya), Formato (uso de "de" para fechas).
+*   **Original:** Listas de responsabilidades sin punto final (ej. `DISEÑO DE REDES FTTH`)
+    *   **Corrección:** Cada elemento de la lista termina con un punto.
+    *   **Tipo de error:** Puntuación.
+*   **Original:** `Al presente , Peru`
+    *   **Corrección:** `Presente`
+    *   **Tipo de error:** Puntuación (coma extra), Redundancia.
+
+**4. Errores de Formato y Estilo (Similares a "Citas" en este contexto)**
+
+*   **Original:** No hay encabezado explícito para la información personal/contacto.
+    *   **Corrección:** Se añadió `Datos personales y de contacto` para estructurar la sección.
+    *   **Tipo de error:** Formato, Claridad.
+*   **Original:** `971168000`
+    *   **Corrección:** `+51 971 168 000`
+    *   **Tipo de error:** Formato (estandarización del número de teléfono con código de país y espacios).
+*   **Original:** `Av. Huancavelica N° 2970`
+    *   **Corrección:** `Av. Huancavelica n.º 2970`
+    *   **Tipo de error:** Formato (uso de `n.º` para "número" en lugar de `N°`).
+*   **Original:** `Sueldo bruto pretendido:`
+    *   **Corrección:** `Remuneración bruta pretendida:`
+    *   **Tipo de error:** Estilo, Vocabulario (más formal para un CV).
+*   **Original:** `CORP. GIGA MAS`, `LIMA EDUCA`, `UNIVERSIDAD CONTINENTAL`, `CIPAL` (capitalización inconsistente)
+    *   **Corrección:** `Corp. Giga Mas`, `Lima Educa`, `Universidad Continental`, `Cipal` (se normaliza la capitalización de nombres de organizaciones a la forma habitual, salvo acrónimos reconocidos).
+    *   **Tipo de error:** Formato, Consistencia.
+*   **Original:** `Universitario - En Curso`
+    *   **Corrección:** `Estudios universitarios - En curso`
+    *   **Tipo de error:** Formato, Claridad.
+*   **Original:** `01-01-2021 - Al presente , Peru` (y otras fechas en formato numérico)
+    *   **Corrección:** `Enero de 2021 – Presente` (y otros con `Mes de Año – Mes de Año`)
+    *   **Tipo de error:** Formato (estandarización de fechas a un estilo más profesional y legible).
+*   **Original:** Las tareas laborales no estaban en formato de lista.
+    *   **Corrección:** Se convirtieron a una lista con viñetas.
+    *   **Tipo de error:** Formato.
+*   **Original:** `Otros conocimientos`
+    *   **Corrección:** `Conocimientos técnicos`
+    *   **Tipo de error:** Formato, Precisión (un título más específico).
+*   **Original:** `Inglés: Escrito Intermedio , Oral Intermedio` (colocado al final de la sección "Conocimientos y habilidades")
+    *   **Corrección:** Se creó una sección separada `Idiomas` y se formateó la información.
+    *   **Tipo de error:** Formato, Estructura (mejor organización de las secciones del CV).
+*   **Original:** Los cursos están bajo el mismo epígrafe de "Estudios".
+    *   **Corrección:** Se separó en "Estudios" (para la carrera universitaria) y "Cursos y certificaciones" para mayor claridad.
+    *   **Tipo de error:** Formato, Estructura.

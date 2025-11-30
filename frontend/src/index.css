@@ -1,0 +1,8 @@
+/* ===== FIX UNIVERSAL PARA ESPACIAR TODO BAJO EL NAVBAR ===== */
+:root {
+  --navbar-height: 80px; /* Ajusta si tu navbar es más alto */
+}
+
+body {
+  padding-top: var(--navbar-height);
+}

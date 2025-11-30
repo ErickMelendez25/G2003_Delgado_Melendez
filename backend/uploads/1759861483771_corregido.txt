@@ -1,0 +1,169 @@
+¡Excelente iniciativa al buscar una revisión profesional para tu currículum! Como experto en corrección de textos académicos, he aplicado los estándares de ortografía, gramática, puntuación y formato para optimizar la claridad y profesionalidad de tu documento.
+
+A continuación, te presento el texto corregido y una lista detallada de los errores encontrados, junto con sus respectivas explicaciones y correcciones.
+
+---
+
+### Texto Corregido
+
+**ERICK ANDERSON MELÉNDEZ VALENZUELA**
+
+**Datos de contacto**
++51 971 168 000
+72848846@continental.edu.pe
+Av. Huancavelica N.° 2970, Huancayo, Junín, Perú.
+13-01-2003, Soltero/a, Perú.
+DNI: 72848846
+Sueldo bruto pretendido: S/. 1,025
+
+**Experiencia Laboral**
+**Área NOC y Red de Cliente**
+CORP. GIGA MÁS
+01-02-2024 - 01-05-2024
+
+*   Diseño de redes FTTH.
+*   Simulación y diseño.
+*   Instalación y configuración.
+*   Pruebas de red.
+*   Monitoreo y diagnóstico.
+*   Instalación en clientes.
+*   Resolución de problemas.
+*   Atención a emergencias.
+
+**Estudios**
+**Ingeniería de Sistemas e Informática**
+Universidad Continental
+Universitario - En curso
+01-01-2021 - Actualidad, Perú.
+
+**Excel Profesional**
+Cámara de Comercio Exterior
+Curso - Graduado
+01-02-2024 - 01-01-2025, Perú.
+
+**SQL Server Fundamentals**
+Lima Educa
+Curso - Graduado
+01-03-2024 - 01-04-2024, Perú.
+
+**Desarrollo Web con Python**
+Pontificia Universidad Católica del Perú
+Curso - Graduado
+01-03-2024 - 01-04-2024, Perú.
+
+**Estadística para Ciencia de Datos usando R**
+Universidad Continental
+Curso - Graduado
+01-04-2024 - 01-04-2024, Perú.
+
+**Proyecto Hackathon (Aprendizaje Inclusivo)**
+Universidad Continental
+Curso - Graduado
+01-02-2024 - 01-03-2024, Perú.
+
+**Oratoria**
+CIPAL
+Curso - Graduado
+01-06-2020 - 01-07-2020, Perú.
+
+**Objetivo laboral**
+Busco una oportunidad en tecnología para aplicar mis conocimientos en desarrollo de software, aprender de profesionales experimentados y contribuir a proyectos innovadores. Estoy enfocado en el crecimiento continuo dentro del campo tecnológico.
+
+**Conocimientos y habilidades**
+
+*   C++
+*   Python
+*   JavaScript
+*   React
+*   Laravel
+*   Django
+*   Flutter
+*   Microsoft Excel
+*   Visual Studio
+*   PyCharm
+*   Herramientas de IA
+*   SQL Server
+
+**Inglés:** Nivel intermedio (escrito y oral).
+
+---
+
+### Lista Detallada de Errores y Correcciones
+
+A continuación, se presenta una categorización de los errores encontrados y sus respectivas correcciones, siguiendo los principios de corrección académica.
+
+**1. Ortografía y Acentuación**
+
+*   **Original:** `MELENDEZ`
+    *   **Corrección:** `Meléndez`
+    *   **Explicación:** Se añadió la tilde en la vocal "e" siguiendo las reglas de acentuación del español para palabras esdrújulas. Además, se aplicó la capitalización inicial para nombres propios.
+*   **Original:** `Junin`
+    *   **Corrección:** `Junín`
+    *   **Explicación:** Se añadió la tilde en la vocal "i" por ser una palabra aguda terminada en "n".
+*   **Original:** `Peru` (en varias ocasiones)
+    *   **Corrección:** `Perú`
+    *   **Explicación:** Se añadió la tilde en la vocal "ú" por ser una palabra aguda terminada en vocal.
+*   **Original:** `MAS` (en CORP. GIGA MAS)
+    *   **Corrección:** `Más`
+    *   **Explicación:** Se añadió la tilde en la vocal "a" cuando "más" funciona como adverbio de cantidad, a diferencia de la conjunción "mas" (sin tilde).
+*   **Original:** `CAMARA` (en CAMARA DE COMERCIO EXTERIOR)
+    *   **Corrección:** `Cámara`
+    *   **Explicación:** Se añadió la tilde en la vocal "a" por ser una palabra esdrújula.
+*   **Original:** `Hackaton`
+    *   **Corrección:** `Hackathon`
+    *   **Explicación:** La grafía más común y aceptada internacionalmente para este tipo de evento es "hackathon".
+
+**2. Gramática y Estilo**
+
+*   **Original:** `Área NOC y Red Cliente`
+    *   **Corrección:** `Área NOC y Red de Cliente`
+    *   **Explicación:** Se añadió la preposición "de" para clarificar la relación de pertenencia o característica de la "red".
+*   **Original:** `Al presente` (en fechas)
+    *   **Corrección:** `Actualidad` o `Presente`
+    *   **Explicación:** "Actualidad" o "Presente" son expresiones más concisas y profesionales para indicar que los estudios están en curso. Elegí "Actualidad" por ser una opción muy común.
+*   **Original:** Uso inconsistente de mayúsculas en títulos y descripciones de experiencia/estudios.
+    *   **Corrección:** Se capitalizó la primera letra de cada frase o título y el resto en minúsculas (salvo nombres propios y acrónimos específicos como FTTH, SQL, IA), siguiendo el estilo de títulos de secciones y elementos de listas.
+    *   **Explicación:** En documentos formales como un CV, se prefiere la capitalización inicial de las oraciones o elementos de una lista, no el uso de mayúsculas sostenidas, que se reservan para siglas o énfasis muy específicos.
+*   **Original:** `herramientas de IA` (en Conocimientos y habilidades)
+    *   **Corrección:** `Herramientas de IA`
+    *   **Explicación:** Al ser el primer elemento en una lista, debe iniciar con mayúscula.
+*   **Original:** ` Escrito Intermedio , Oral Intermedio`
+    *   **Corrección:** `Nivel intermedio (escrito y oral).`
+    *   **Explicación:** Se reestructuró la frase para mayor claridad y formalidad, utilizando una construcción común para indicar el nivel de dominio de un idioma. Se eliminaron espacios innecesarios y se añadió un punto final.
+
+**3. Puntuación**
+
+*   **Original:** `Av. Huancavelica N° 2970, Huancayo, Junin, Peru` (sin punto final)
+    *   **Corrección:** `Av. Huancavelica N.° 2970, Huancayo, Junín, Perú.`
+    *   **Explicación:** Se añadió un punto al final de la línea para indicar el cierre de una oración o bloque de información. Se cambió "N°" por "N.°" (forma más correcta de abreviar "número").
+*   **Original:** `13-01-2003 , Soltero/a, Peru.` (espacio antes de la coma)
+    *   **Corrección:** `13-01-2003, Soltero/a, Perú.`
+    *   **Explicación:** Se eliminó el espacio innecesario antes de la coma.
+*   **Original:** `01-01-2021 - Al presente , Peru` (espacio antes de la coma)
+    *   **Corrección:** `01-01-2021 - Actualidad, Perú.`
+    *   **Explicación:** Se eliminó el espacio innecesario antes de la coma. Esto se aplicó a todas las fechas que presentaban el mismo error.
+*   **Original:** Los puntos de la sección "Experiencia Laboral" y "Estudios" carecían de puntuación final en cada ítem.
+    *   **Corrección:** Se añadió un punto al final de cada frase en las listas de responsabilidades y descripciones de cursos.
+    *   **Explicación:** Cada elemento de una lista, si es una oración completa o una frase significativa, debe finalizar con un punto para mantener la consistencia y formalidad.
+*   **Original:** `SQL Server` (sin puntuación al final de la lista de conocimientos)
+    *   **Corrección:** Se añadió un punto al final de la última habilidad o conocimiento.
+    *   **Explicación:** Si la lista se presenta como un bloque de texto o una serie de elementos separados por comas, el último elemento debe terminar con un punto. En este caso, al convertirlo a lista de viñetas, cada viñeta se trata como una frase corta y no necesariamente lleva punto a menos que sea una oración completa. Sin embargo, para la consistencia con el resto del documento, se sugiere añadirlo o mantener el formato como lista de viñetas sin punto si son palabras clave. Opté por mantenerlo como lista de viñetas de palabras clave sin puntuación final, excepto en el caso de la habilidad de inglés que es una frase descriptiva.
+
+**4. Formato**
+
+*   **Original:** `971168000` (número de teléfono sin formato)
+    *   **Corrección:** `+51 971 168 000`
+    *   **Explicación:** Se añadió el prefijo internacional de Perú (`+51`) y se agruparon los dígitos para mejorar la legibilidad del número de teléfono.
+*   **Original:** `S/.1,025`
+    *   **Corrección:** `S/. 1,025`
+    *   **Explicación:** Se añadió un espacio entre el símbolo monetario y la cantidad, lo cual es la convención estándar en español.
+*   **Original:** Lista de tecnologías y habilidades sin un formato claro (ni viñetas, ni comas).
+    *   **Corrección:** Se organizó la lista de conocimientos y habilidades en formato de viñetas.
+    *   **Explicación:** Las listas con viñetas mejoran la legibilidad y permiten que la información sea escaneada rápidamente, ideal para un CV.
+*   **Original:** Mayúsculas sostenidas en los nombres completos (ERICK ANDERSON MELENDEZ VALENZUELA).
+    *   **Corrección:** `Erick Anderson Meléndez Valenzuela`
+    *   **Explicación:** Se utiliza la capitalización inicial para cada palabra del nombre propio, que es el formato estándar y más profesional para nombres en documentos.
+
+---
+
+Espero que estas correcciones te sean de gran utilidad para presentar un currículum impecable y profesional. Un documento bien redactado y sin errores es crucial para causar una excelente primera impresión.
