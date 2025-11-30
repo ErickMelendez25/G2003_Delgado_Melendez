@@ -1,20 +1,24 @@
-# Usa Node.js
-FROM node:18
-
-# Carpeta de trabajo
+# Build stage
+FROM node:20-alpine as build
 WORKDIR /app
 
-# Copiar dependencias
-COPY package*.json ./
-
-# Instalar dependencias
+COPY package.json package-lock.json ./
 RUN npm install
 
-# Copiar todo el código
 COPY . .
+RUN npm run build
 
-# Puerto de desarrollo de Vite o React
-EXPOSE 5173
+# Production stage
+FROM nginx:alpine
 
-# Comando para iniciar el frontend
-CMD ["npm", "run", "dev"]
+# Remove default nginx config (opcional)
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copia build (Vite -> 'dist', CRA -> 'build'). Ajusta si tu salida es diferente.
+COPY --from=build /app/dist /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
