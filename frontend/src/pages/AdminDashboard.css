@@ -1,7 +1,7 @@
 /* ===== SEPARACIÓN SUPERIOR ELEGANTE ===== */
 .admin-table-container {
   overflow-x: auto;
-  margin-top: 150px; /* 👈 Este es el margin-top */
+  margin-top: 2px; /* 👈 Este es el margin-top */
 }
 
 /* Mantiene exactamente el mismo tamaño */

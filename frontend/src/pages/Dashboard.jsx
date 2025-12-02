@@ -5,30 +5,65 @@
 
   const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-  const renderAnnotatedText = (text, annotations = []) => {
-    if (!annotations?.length)
-      return <pre className="original-text" data-testid="annotated-text">{text}</pre>;
+const renderAnnotatedText = (text, annotations = []) => {
+  if (!annotations?.length) {
+    return <pre className="original-text" data-testid="annotated-text">{text}</pre>;
+  }
 
-    const sorted = [...annotations].sort((a, b) => b.original.length - a.original.length);
-    let output = text;
+  const sorted = [...annotations].sort((a, b) => b.original.length - a.original.length);
 
-    sorted.forEach((a) => {
-      if (!a.original) return;
-      const clsMap = {
-        spelling: "hl-spelling",
-        grammar: "hl-grammar",
-        citation: "hl-citation",
-        other: "hl-other",
-      };
-      const tooltip = `${a.type.toUpperCase()}\n💡 ${a.note}\n👉 ${a.suggestion}`;
-      output = output.replace(
-        new RegExp(`(${escapeRegex(a.original)})`, "gi"),
-        `<mark class="annotation ${clsMap[a.type]}" data-tooltip="${tooltip}">$1</mark>`
-      );
+  // Dividir el texto en partes y reemplazar por <mark> usando JSX
+  let parts = [text];
+
+  sorted.forEach((a) => {
+    if (!a.original) return;
+
+    const clsMap = {
+      spelling: "hl-spelling",
+      grammar: "hl-grammar",
+      citation: "hl-citation",
+      other: "hl-other",
+    };
+
+    const tooltip = `${a.type.toUpperCase()}\n💡 ${a.note}\n👉 ${a.suggestion}`;
+
+    parts = parts.flatMap((part) => {
+      if (typeof part !== "string") return [part]; // ya es JSX
+      const regex = new RegExp(`(${escapeRegex(a.original)})`, "gi");
+      const splitParts = [];
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(part)) !== null) {
+        if (match.index > lastIndex) {
+          splitParts.push(part.slice(lastIndex, match.index));
+        }
+
+        splitParts.push(
+          <mark
+            key={`${a.original}-${match.index}`}
+            className={`annotation ${clsMap[a.type]}`}
+            data-tooltip={tooltip}
+            data-testid="annotation"
+          >
+            {match[0]}
+          </mark>
+        );
+
+        lastIndex = match.index + match[0].length;
+      }
+
+      if (lastIndex < part.length) {
+        splitParts.push(part.slice(lastIndex));
+      }
+
+      return splitParts;
     });
+  });
 
-    return <pre className="original-text" data-testid="annotated-text" dangerouslySetInnerHTML={{ __html: output }} />;
-  };
+  return <pre className="original-text" data-testid="annotated-text">{parts}</pre>;
+};
+
 
 
   export default function Dashboard() {
@@ -49,7 +84,8 @@
     e.preventDefault();
 
     if (!file) {
-      alert("Selecciona un archivo antes de subirlo.");
+      alert("Selecciona un archivo antes de continuar.");
+
       return;
     }
 
@@ -148,6 +184,17 @@
               📂 Historial
             </button>
 
+            {user?.role === "student" && (
+              <a
+                href="https://forms.gle/AaXQu2LCUM3trfVs8"  // <-- URL externa
+                target="_blank"                       // <-- abrir en pestaña nueva
+                rel="noopener noreferrer"             // <-- seguridad
+                className="admin-btn"
+              >
+                Feedback del Usuario
+              </a>
+            )}
+
             {user?.role === "admin" && (
             <button
               type="button"
@@ -156,6 +203,17 @@
             >
               🛠 Administrador de consultas
             </button>
+            )}
+
+            {user?.role === "admin" && (
+              <a
+                href="https://docs.google.com/spreadsheets/d/1B-KJ35UTrzop1WGFju7pjt05GNzGYGr24fxOtdZV2CI/edit?resourcekey=&gid=1697018670#gid=1697018670"  // <-- URL externa
+                target="_blank"                       // <-- abrir en pestaña nueva
+                rel="noopener noreferrer"             // <-- seguridad
+                className="admin-btn"
+              >
+                📊 Estadísticas Usabilidad – SUS & Heurísticas de Nielsen
+              </a>
             )}
           </form>
         </div>

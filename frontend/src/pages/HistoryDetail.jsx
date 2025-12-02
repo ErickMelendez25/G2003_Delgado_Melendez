@@ -6,13 +6,12 @@ import "../styles/historyDetail.css";
 // ====== Función para escapar regex ======
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-// ====== Renderizar texto ANOTADO ======
-const renderAnnotatedText = (text, annotations = []) => {
-  if (!annotations?.length)
-    return <pre className="original-text">{text}</pre>;
+// ====== Renderizar texto ANOTADO (JSX real) ======
+const renderAnnotatedTextJSX = (text, annotations = []) => {
+  if (!annotations?.length) return <pre className="original-text">{text}</pre>;
 
   const sorted = [...annotations].sort((a, b) => b.original.length - a.original.length);
-  let output = text;
+  let parts = [text];
 
   sorted.forEach((a) => {
     if (!a.original) return;
@@ -26,18 +25,36 @@ const renderAnnotatedText = (text, annotations = []) => {
 
     const tooltip = `${a.type.toUpperCase()}\n💡 ${a.note}\n👉 ${a.suggestion}`;
 
-    output = output.replace(
-      new RegExp(`(${escapeRegex(a.original)})`, "gi"),
-      `<mark class="annotation ${clsMap[a.type]}" data-tooltip="${tooltip}">$1</mark>`
-    );
+    parts = parts.flatMap((part) => {
+      if (typeof part !== "string") return [part];
+      const regex = new RegExp(`(${escapeRegex(a.original)})`, "gi");
+      const splitParts = [];
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(part)) !== null) {
+        if (match.index > lastIndex) splitParts.push(part.slice(lastIndex, match.index));
+
+        splitParts.push(
+          <mark
+            key={`${a.original}-${match.index}`}
+            className={`annotation ${clsMap[a.type]}`}
+            data-tooltip={tooltip}
+            data-testid="annotation"
+          >
+            {match[0]}
+          </mark>
+        );
+
+        lastIndex = match.index + match[0].length;
+      }
+
+      if (lastIndex < part.length) splitParts.push(part.slice(lastIndex));
+      return splitParts;
+    });
   });
 
-  return (
-    <pre
-      className="original-text"
-      dangerouslySetInnerHTML={{ __html: output }}
-    />
-  );
+  return <pre className="original-text">{parts}</pre>;
 };
 
 export default function HistoryDetail() {
@@ -49,21 +66,24 @@ export default function HistoryDetail() {
 
   useEffect(() => {
     api.get(`/history/${id}`).then((res) => {
-        let fixed = { ...res.data };
+      let fixed = { ...res.data };
 
-        // Forzar que annotations sea array SIEMPRE
-        if (typeof fixed.annotations === "string") {
-            try {
-            fixed.annotations = JSON.parse(fixed.annotations);
-            } catch {
-            fixed.annotations = [];
-            }
+      // Forzar que annotations sea array
+      if (!Array.isArray(fixed.annotations)) {
+        try {
+          fixed.annotations = JSON.parse(fixed.annotations);
+        } catch {
+          fixed.annotations = [];
         }
+      }
 
-        setData(fixed);
-        });
+      // Forzar que originalText y correctedText existan
+      fixed.originalText = fixed.originalText || "";
+      fixed.correctedText = fixed.correctedText || "";
 
-  }, []);
+      setData(fixed);
+    });
+  }, [id]);
 
   if (!data) return <p className="loading">Cargando...</p>;
 
@@ -99,7 +119,7 @@ export default function HistoryDetail() {
         {/* Contenido */}
         <div className="scroll-card">
           {tab === "annotated"
-            ? renderAnnotatedText(data.originalText, data.annotations)
+            ? renderAnnotatedTextJSX(data.originalText, data.annotations)
             : <pre className="corrected-text">{data.correctedText}</pre>}
         </div>
 

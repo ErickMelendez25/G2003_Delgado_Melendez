@@ -12,7 +12,8 @@ export const pool = mysql.createPool({
   charset: "utf8mb4",
 });
 
-if (process.env.NODE_ENV !== "test") {
+if (process.env.NODE_ENV !== "test" && process.env.JEST_WORKER_ID === undefined) {
+
   (async () => {
     try {
       const conn = await pool.getConnection();

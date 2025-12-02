@@ -48,3 +48,25 @@ export const getUploadByIdAdmin = async (req, res) => {
     res.status(500).json({ error: "Error", detail: err.message });
   }
 };
+export const updateUpload = async (req, res) => {
+  const { id } = req.params;
+  const { file_name } = req.body;  
+  try {
+    await pool.query("UPDATE file_uploads SET file_name = ? WHERE id = ?", [file_name, id]);
+    res.json({ ok: true, message: "Registro actualizado" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ ok: false, error: err.message });
+  }
+};
+
+export const deleteUpload = async (req, res) => {
+  const { id } = req.params;
+  try {
+    await pool.query("DELETE FROM file_uploads WHERE id = ?", [id]);
+    res.json({ ok: true, message: "Registro eliminado" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ ok: false, error: err.message });
+  }
+};

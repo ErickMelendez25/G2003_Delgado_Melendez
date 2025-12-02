@@ -50,6 +50,30 @@ export default function AdminDashboard() {
                       <button onClick={() => navigate(`/admin/history/${r.id}`)}>
                         🔎 Abrir
                       </button>
+
+                      <button 
+                        style={{ marginLeft: "8px", background: "red", color: "white" }}
+                        onClick={async () => {
+                          if (window.confirm("¿Seguro que quieres eliminar este registro?")) {
+                            await api.delete(`/admin/history/${r.id}`);
+                            setRecords(records.filter(rec => rec.id !== r.id)); // quita del frontend
+                          }
+                        }}
+                      >
+                        🗑️ Eliminar
+                      </button>
+                      <button 
+                        style={{ marginLeft: "8px", background: "orange", color: "white" }}
+                        onClick={async () => {
+                          const newName = prompt("Nuevo nombre de archivo:", r.file_name);
+                          if (newName) {
+                            await api.put(`/admin/history/${r.id}`, { file_name: newName });
+                            setRecords(records.map(rec => rec.id === r.id ? { ...rec, file_name: newName } : rec));
+                          }
+                        }}
+                      >
+                        ✏️ Editar
+                      </button>
                     </td>
                   </tr>
                 ))}
